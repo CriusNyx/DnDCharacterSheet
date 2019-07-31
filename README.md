@@ -14,8 +14,8 @@ Either that, or they were created with old web technology, and are just
 cumbersome to use.
 
 If only you had a simple lightweight character creator, which is simple
-and easy to use, features automatically calculates mods and proficencies
-for you, is customizable, and uses plain text as input for your inventoy.
+and easy to use, features automatically calculated mods and proficencies, 
+is customizable, and uses plain text as input for your inventoy.
 
 That was the focus behind creating this dnd character sheet creator
 
