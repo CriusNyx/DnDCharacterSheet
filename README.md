@@ -21,7 +21,7 @@ That was the focus behind creating this dnd character sheet creator
 
 ## Features
 
-- A lightweight and easy to use.
+- Lightweight and easy to use.
 - Looks good on both desktop and mobile.
 - No login needed
 - Stores characters safely online
