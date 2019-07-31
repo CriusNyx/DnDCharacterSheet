@@ -2,12 +2,13 @@
 
 ## Project Overview
 
-You just arrived at a friends house, and you really want to play DnD,
+You and a friend have been hanging, and you really want to play DnD,
 but you left all your characters at home.
 
-You've tried online characters, but many of them require an annoying login
-to use, and have poor customizability, and provide little or no support
-for homebrew.
+You've tried online character creators, but many of them require an 
+annoying login to use, and have poor customizability, and provide 
+little or no support for homebrew. Also, you guys have played for
+a while, and you don't like the handholding.
 
 Either that, or they were created with old web technology, and are just
 cumbersome to use.
