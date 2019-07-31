@@ -1,0 +1,27 @@
+There appears to be a but with to hit calculations
+Longbow + 2 (+3) doesn't work
+^fixed
+
+Make header grow as you type in them
+
+See if you can identify spell slot glitch.
+Wrong levels listed if you switch between half and full
+
+Some instructions. Jake didn't realize the prof bonus defaulted to 0
+
+Implement double proficency
+
+
+Saving And Loading Pattern
+
+Create a file in the db called index (and also some way to regenerate 
+index if it gets damaged)
+Index contains a list of known characters, and mappings to their files
+
+The user selects a character from the index file.
+If the user decides to, a list of revisions of that character
+can be selected, or the latest revision can be loaded
+
+index file is managed by the backend. No front end management of index
+
+
