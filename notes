@@ -25,3 +25,5 @@ can be selected, or the latest revision can be loaded
 index file is managed by the backend. No front end management of index
 
 
+Make save / open button on pannel at top
+Make it auto save when opening a new character.

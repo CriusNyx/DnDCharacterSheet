@@ -1,5 +1,6 @@
 import React from 'react';
 import MainPanel from './MainPanel.js';
+import LoadButton from './LoadButton.js';
 
 class OpenPanel extends React.Component{
     constructor(props){
@@ -25,10 +26,10 @@ class OpenPanel extends React.Component{
             return(
                 <div>
                     <h1>
-                        Create New character
+                        Characters
                     </h1>
                     <p>
-                        <button onClick={() => MainPanel.createMode()}>new</button>
+                        <button onClick={() => MainPanel.newCharacter()}>new</button>
                     </p>
                     {this.state.data.map(this.characterToHTML)}
                 </div>
@@ -46,18 +47,12 @@ class OpenPanel extends React.Component{
 
     characterToHTML(x, y){
         return (
-            <div>
-                <p>
-                    <button onClick={() => this.loadCharacter(x)}>
-                        Name: {x}
-                    </button>
-                </p>
-            </div>
+            <LoadButton id={x._id} text = {x.playerName + ': ' + x.name}/>
         )
     }
 
-    loadCharacter(characterState){
-        MainPanel.loadCharacter(characterState);
+    loadCharacter(id){
+        MainPanel.loadCharacter(id);
     }
 
     open(){

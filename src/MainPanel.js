@@ -3,6 +3,7 @@ import Character from './Character.js';
 import OpenPanel from './OpenPanel.js';
 import CharacterData from './CharacterData.js';
 import WeaponData from './WeaponData.js';
+import Axios from 'axios';
 
 class MainPanel extends React.Component{
     static mainPanel = null;
@@ -27,21 +28,24 @@ class MainPanel extends React.Component{
         )
     }
 
-    static loadCharacter(characterName){
+    static loadCharacter(id){
 
-        var query = characterName.replace(' ', '+');
+        var query = id.replace(' ', '+');
 
-        var req = 'http://' + window.location.hostname + ':3001/api/getCharacter?name=' + query;
+        var req = 'http://' + window.location.hostname + ':3001/api/getCharacter?id=' + query;
 
-        fetch(req).then((data) => data.json()).then((res) => MainPanel.loadCharacterData(res));
+        fetch(req).then((data) => data.json()).then((res) => MainPanel.loadCharacterData(id, res));
     }
 
-    static loadCharacterData(res){
+    static loadCharacterData(id, res){
+
         if(res['success']){
 
             var characterJSON = res.data.message;
 
             var character = JSON.parse(characterJSON);
+
+            character.id = id;
 
             character.weapon1 = new WeaponData(character.weapon1);
             character.weapon2 = new WeaponData(character.weapon2);
@@ -51,6 +55,20 @@ class MainPanel extends React.Component{
 
             MainPanel.createMode();
         }
+    }
+
+    static newCharacter(){
+        var req = 'http://' + window.location.hostname + ':3001/api/newCharacter';
+
+        fetch(req)
+        .then((data) => data.json())
+        .then(
+            (res) => { 
+                if(res['success']) 
+                { 
+                    CharacterData.getCharacterByID('').setState({id: res['id']});
+                    MainPanel.createMode();
+                }});
     }
 
     static createMode(){
